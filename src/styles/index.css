@@ -1,0 +1,324 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper: #eaeaea;
+    --ink: #111111;
+    --red: #e5393f;
+    --line: rgba(17, 17, 17, 0.16);
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    overflow-x: clip;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--red);
+    color: var(--paper);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 3px;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  .label {
+    @apply font-mono text-[10px] font-normal uppercase leading-none tracking-[0.18em] sm:text-[11px];
+  }
+
+  .label-tight {
+    @apply font-mono text-[9px] uppercase leading-none tracking-[0.16em];
+  }
+
+  .display {
+    font-family: 'Archivo Variable', Archivo, 'Arial Black', sans-serif;
+    font-weight: 800;
+    font-stretch: 104%;
+    letter-spacing: -0.045em;
+    line-height: 0.84;
+    text-transform: uppercase;
+  }
+
+  .display-tight {
+    font-family: 'Archivo Variable', Archivo, 'Arial Black', sans-serif;
+    font-weight: 800;
+    font-stretch: 100%;
+    letter-spacing: -0.055em;
+    line-height: 0.8;
+    text-transform: uppercase;
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.4px var(--ink);
+  }
+
+  @media (min-width: 1024px) {
+    .text-outline {
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  .text-outline-paper {
+    color: transparent;
+    -webkit-text-stroke: 1.4px var(--paper);
+  }
+
+  @media (min-width: 1024px) {
+    .text-outline-paper {
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  .rule {
+    @apply border-t border-ink/15;
+  }
+
+  .rule-paper {
+    @apply border-t border-paper/25;
+  }
+
+  .link-line {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    transition: background-size 0.45s var(--ease), color 0.3s ease;
+  }
+
+  .link-line:hover {
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+  }
+
+  .btn-editorial {
+    @apply inline-flex items-center justify-center gap-2 border border-ink px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] transition-colors duration-300;
+  }
+
+  .btn-editorial:hover {
+    @apply bg-ink text-paper;
+  }
+
+  .btn-red {
+    @apply inline-flex items-center justify-center gap-2 border border-red bg-red px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-paper transition-colors duration-300;
+  }
+
+  .btn-red:hover {
+    @apply border-ink bg-ink;
+  }
+
+  .field-note {
+    @apply font-mono text-[10px] uppercase leading-relaxed tracking-[0.12em] text-smoke;
+  }
+
+  .grain-layer {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    background-size: 220px 220px;
+  }
+
+  .crosshair::before,
+  .crosshair::after {
+    content: '';
+    position: absolute;
+    background: rgba(17, 17, 17, 0.4);
+  }
+  .crosshair::before {
+    width: 1px;
+    height: 11px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .crosshair::after {
+    height: 1px;
+    width: 11px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-shadow {
+    box-shadow: 0 26px 60px -30px rgba(17, 17, 17, 0.45);
+  }
+
+  .game-focus:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 4px;
+  }
+
+  .cert-frame {
+    transform: rotate(var(--tilt, 0deg));
+    transition:
+      transform 0.6s var(--ease),
+      box-shadow 0.6s var(--ease);
+  }
+
+  .group:hover > .cert-frame {
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 0 30px 55px -30px rgba(17, 17, 17, 0.5);
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 200;
+    transform: translateY(-160%);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: transform 0.25s var(--ease);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1023px) {
+  .cert-frame {
+    transform: none;
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.float-slow {
+  animation: floatY 8s ease-in-out infinite;
+}
+
+.float-slower {
+  animation: floatY 11s ease-in-out infinite;
+  animation-delay: -3.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow,
+  .float-slower {
+    animation: none;
+  }
+}
+
+@layer utilities {
+  .vertical-rl {
+    writing-mode: vertical-rl;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  }
+}
+
+/* Native cursor is replaced only on precise pointers, and only when JS enables it. */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role='button'] {
+    cursor: none;
+  }
+}
+
+/* Custom scrollbar — desktop */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #e2e2e2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #b9b9b6;
+    border: 3px solid #e2e2e2;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #111;
+  }
+}
+
+/* Hide mobile browser tap highlight on the arcade controls */
+.game-pad button {
+  touch-action: manipulation;
+}
+
+/* Reduced motion: stop decorative loops */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-blink {
+    animation: none !important;
+  }
+}

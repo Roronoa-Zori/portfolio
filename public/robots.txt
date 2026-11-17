@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# The CV is intentionally not published. Only the certificates are public.

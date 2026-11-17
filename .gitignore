@@ -1,0 +1,41 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output
+dist/
+build/
+.vite/
+*.local
+
+# environment
+.env
+.env.*
+!.env.example
+
+# private documents — CV and any personal source files are never committed
+private/
+documents/private/
+*.private.*
+Mominur_CV.pdf
+Mominur_Rahman_CV*.docx
+cv.pdf
+
+# editor / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# testing
+coverage/
+playwright-report/
+test-results/
