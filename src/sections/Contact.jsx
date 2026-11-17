@@ -38,7 +38,7 @@ function LinkRow({ icon: Icon, label, value, href, note, disabled }) {
     return (
       <div
         className="flex items-center justify-between gap-4 border-b border-ink/15 py-3"
-        title={note || 'Link not supplied yet — update src/data/site.js'}
+        title={note}
       >
         {content}
       </div>
@@ -151,18 +151,14 @@ export default function Contact() {
                   <LinkRow
                     icon={Github}
                     label="GitHub"
-                    value={profile.links.github ? 'Profile' : 'Link not supplied'}
-                    href={profile.links.github || undefined}
-                    note="Add your GitHub URL in src/data/site.js"
-                    disabled={!profile.links.github}
+                    value={profile.links.githubHandle}
+                    href={profile.links.github}
                   />
                   <LinkRow
                     icon={Linkedin}
                     label="LinkedIn"
-                    value={profile.links.linkedin ? 'Profile' : 'Link not supplied'}
-                    href={profile.links.linkedin || undefined}
-                    note="Add your LinkedIn URL in src/data/site.js"
-                    disabled={!profile.links.linkedin}
+                    value={profile.links.linkedinHandle}
+                    href={profile.links.linkedin}
                   />
                 </div>
                 <div>
@@ -180,8 +176,8 @@ export default function Contact() {
 
             <Reveal delay={0.18}>
               <p className="field-note mt-5 max-w-[58ch]">
-                GitHub and LinkedIn were not included with the supplied documents, so they are marked
-                rather than guessed. The original CV is kept private; ask and I will send it.
+                The original CV is kept private; ask and I will send it. GitHub and LinkedIn open in
+                a new tab.
               </p>
             </Reveal>
           </div>

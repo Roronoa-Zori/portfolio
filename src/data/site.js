@@ -2,9 +2,8 @@
  * SINGLE SOURCE OF TRUTH — personal details.
  * Only information present in the supplied CV and certificates is used.
  *
- * ✏️  TO UPDATE LINKS: fill in `github` and `linkedin` below with full URLs.
- *     While they are empty the site shows a clearly labelled "LINK NOT SUPPLIED"
- *     state instead of inventing an address.
+ * ✏️  To update links: edit `github` / `linkedin` below (full URLs) and the handles
+ *     that appear in the contact rows. Empty values hide the corresponding row.
  */
 export const profile = {
   name: 'Md Mominur Rahman',
@@ -22,10 +21,10 @@ export const profile = {
   studyYear: 'Fourth year, ongoing',
   languages: 'English (fluent) · Bangla (fluent)',
   links: {
-    // Add e.g. 'https://github.com/your-username'
-    github: '',
-    // Add e.g. 'https://www.linkedin.com/in/your-profile'
-    linkedin: '',
+    github: 'https://github.com/Roronoa-Zori',
+    githubHandle: 'Roronoa-Zori',
+    linkedin: 'https://www.linkedin.com/in/md-mominur-rahman-2672ba44b/',
+    linkedinHandle: 'md-mominur-rahman',
   },
   cv: {
     // The original CV is intentionally NOT published. See README.

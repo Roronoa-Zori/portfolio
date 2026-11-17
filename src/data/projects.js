@@ -1,8 +1,7 @@
 /**
  * Projects — built only from the CV, the supplied FrootDash project report,
  * and work that genuinely exists inside this portfolio.
- * Links that were not supplied are left empty and rendered as explicit
- * "not supplied" states. Never invent a repository or a live URL.
+ * Only links that actually exist are stored here; the UI simply omits the rest.
  */
 export const projects = [
   {
@@ -13,7 +12,7 @@ export const projects = [
     categories: ['Web'],
     year: '2026',
     role: 'Design & development — academic project',
-    status: 'Coursework · not deployed',
+    status: 'Academic project',
     summary:
       'A fruit delivery website for Rajshahi — customer accounts, a browsable catalogue, cart and checkout, plus an admin dashboard for products and orders.',
     intro:
@@ -65,7 +64,7 @@ export const projects = [
       { src: '/projects/frootdash-register.webp', alt: 'FrootDash account registration form.', caption: 'Figure 08 — Registration', width: 1287, height: 644 },
     ],
     sourceNote:
-      'Screenshots reproduced from the FrootDash project report supplied with this portfolio. No live deployment was supplied.',
+      'Screenshots reproduced from the FrootDash project report supplied with this portfolio.',
     reflection:
       'The useful lesson was everything around the happy path: sessions, stock, order states and an admin view that makes raw data legible. A storefront is easy to sketch; making the other side of it usable is the actual work.',
     links: {
@@ -91,24 +90,23 @@ export const projects = [
     problem:
       'Build games that work without a framework-specific game engine, stay legible in the same editorial visual language as the rest of the site, and remain playable with a keyboard, touch or mouse.',
     contribution: [
-      'Designed and implemented Tic-Tac-Toe with two-player turns, win and draw detection, a persistent score line and a restart flow.',
+      'Designed and implemented Tic-Tac-Toe with a minimax computer opponent, a two-player mode, win and draw detection, a persistent score line and a restart flow.',
       'Implemented Snake on a canvas with keyboard and swipe input, on-screen touch controls, pause, score, persistent best score and game-over handling.',
       'Styled both games to sit inside the portfolio’s grid instead of importing a generic game UI.',
     ],
     stack: ['React', 'JavaScript', 'Canvas 2D', 'Tailwind CSS', 'Framer Motion'],
     features: [
-      'Two-player Tic-Tac-Toe',
+      'Tic-Tac-Toe vs. minimax AI',
+      'Two-player pass & play',
       'Win & draw detection',
       'Match score tracking',
       'Keyboard & touch Snake',
       'Pause / resume',
       'Persistent best score',
       'Restart without reloading',
-      'Reduced-motion friendly',
     ],
     screenshots: [],
-    sourceNote:
-      'Both games are playable in the Arcade section of this site. No separate repository was supplied.',
+    sourceNote: 'Both games are playable in the Arcade section of this site.',
     reflection:
       'Snake is a lesson in edge cases: input queues, reversal bugs and the collision check that runs one frame too late. Tic-Tac-Toe is a lesson in restraint — the rules are trivial, so the interface has to carry the experience.',
     links: {
@@ -126,7 +124,7 @@ export const projects = [
     categories: ['Graphics'],
     year: 'Ongoing',
     role: 'Coursework — Computer Graphics',
-    status: 'Course project · captures not supplied',
+    status: 'Course project',
     summary:
       'A set of Computer Graphics course projects covering drawing algorithms, rendering techniques and basic graphical programming.',
     intro:
@@ -146,7 +144,7 @@ export const projects = [
     ],
     screenshots: [],
     sourceNote:
-      'Project captures were not supplied, so no screenshots are shown. The cover artwork on this page is an original generative composition made for this portfolio — it is not a screenshot of coursework.',
+      'The cover artwork on this page is an original generative composition made for this portfolio — it is not a screenshot of coursework.',
     reflection:
       'Graphics work makes abstraction visible. A line is easy until you have to decide which pixels belong to it, and that mindset — checking the primitive, not just the output — carries into interface work.',
     links: {

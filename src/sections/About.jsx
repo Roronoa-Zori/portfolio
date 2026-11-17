@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import SectionHeader from '../components/SectionHeader'
 import Reveal from '../components/Reveal'
@@ -31,9 +32,9 @@ export default function About() {
           note="A short introduction — education, interests and the honest version of where I am."
           title={
             <>
-              STILL LEARNING.
+              TURNING CURIOSITY
               <br />
-              <span className="text-outline">ALREADY BUILDING.</span>
+              <span className="text-outline">INTO SOMETHING TANGIBLE.</span>
             </>
           }
         />
@@ -148,14 +149,14 @@ export default function About() {
             </Reveal>
 
             <Reveal delay={0.26} className="mt-9">
-              <a href={`mailto:${profile.email}`} className="btn-editorial group" data-cursor="email">
+              <Link to="/#contact" className="btn-editorial group" data-cursor="say hi">
                 Start a conversation
                 <ArrowUpRight
                   size={13}
                   strokeWidth={1.8}
                   className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 />
-              </a>
+              </Link>
             </Reveal>
           </div>
         </div>

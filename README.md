@@ -2,17 +2,17 @@
 
 An interactive, magazine-style portfolio for **Md Mominur Rahman**, a final-year Computer Science &
 Engineering student at Varendra University, Rajshahi. Built as a single-page React app with three
-case-study routes and two playable games.
+case-study routes and two playable games, including Tic-Tac-Toe against a minimax computer opponent.
 
-The design language is brutalist/editorial: off-white paper (`#EAEAEA`), ink (`#111111`), a single
+The design language is brutalist/editorial: warm off-white paper (`#F5F3EE`), ink (`#111111`), a single
 red accent (`#E5393F`), oversized mixed solid-and-outline typography, hairline rules, registration
 marks, film grain, and a small amount of collage.
 
-> **Content honesty note.** Every fact on the site comes from the supplied CV and certificate scans.
-> No project, repository, live demo, screenshot, proficiency level, or social profile has been
-> invented. Where something was not supplied, the UI says so explicitly
-> ("LINK NOT SUPPLIED", "Demo not supplied", "Repo not supplied"). The CV PDF is intentionally
-> **not** published — the contact section reads "CV on request".
+> **Content honesty note.** Every fact on the site comes from the supplied CV, certificates, or
+> information confirmed by the owner. No project, repository, live demo, screenshot, proficiency
+> level, or social profile has been invented. Sections simply omit anything that does not exist
+> rather than padding the page with dead links. The CV PDF is intentionally **not** published — the
+> contact section reads "CV on request".
 
 ---
 
@@ -96,30 +96,33 @@ Everything you would normally want to change lives in `src/data/`. No component 
 
 | File                     | Contains                                                              |
 | ------------------------ | --------------------------------------------------------------------- |
-| `src/data/site.js`       | Name, role, location, email, nav labels, **GitHub/LinkedIn placeholders** |
+| `src/data/site.js`       | Name, role, location, email, nav labels, GitHub/LinkedIn URLs and handles |
 | `src/data/projects.js`   | Three projects: slug, title, summary, problem, stack, links, case-study copy |
 | `src/data/certificates.js` | Certificate metadata, PDF paths, filters, gallery ordering          |
 | `src/data/skills.js`     | Skill groups and the honest proficiency wording                       |
 | `src/data/experience.js` | Education and experience timeline entries                             |
 
-### Filling in the social links
+### Social links
 
-`src/data/site.js` ships with empty strings on purpose:
+`src/data/site.js` holds the profile URLs and the handles shown in the contact rows:
 
 ```js
 links: {
-  github: '',   // e.g. 'https://github.com/your-username'
-  linkedin: '', // e.g. 'https://www.linkedin.com/in/your-profile'
+  github: 'https://github.com/Roronoa-Zori',
+  githubHandle: 'Roronoa-Zori',
+  linkedin: 'https://www.linkedin.com/in/md-mominur-rahman-2672ba44b/',
+  linkedinHandle: 'md-mominur-rahman',
 }
 ```
 
-While a value is empty, the contact section renders a labelled **LINK NOT SUPPLIED** state. Fill in
-the full URL and the link becomes live automatically — nothing else to change.
+They appear in the contact section, the mobile menu and the footer. Set a value to an empty string
+to hide that row.
 
 ### Project links
 
-Same rule in `src/data/projects.js`: `links.live` and `links.github` are empty unless a real URL was
-supplied. An empty value renders "Demo not supplied" / "Repo not supplied" rather than a dead button.
+Same pattern in `src/data/projects.js`: `links.live` and `links.github` are only rendered when they
+contain a real URL. FrootDash and the Graphics coursework have neither, so those rows and the whole
+Links panel on their case-study pages are omitted rather than shown as "not supplied".
 
 ### Replacing images
 
@@ -146,14 +149,14 @@ Four scanned certificates are published in full:
 | AI for Immersive Technology — BDSET, 25 Jun 2026 (288 h, Cert No. BDSET-RAJ-488) | `/certificates/ai-immersive-technology.pdf` |
 | LaunchPad AI Hackathon 2026 — Build segment, 20 Aug 2026 | `/certificates/launchpad-hackathon-build.pdf` |
 | LaunchPad AI Hackathon 2026 — Research segment, 20 Aug 2026 | `/certificates/launchpad-hackathon-research.pdf` |
-| Tech Debate 4.0 — participation (no date printed on the document) | `/certificates/tech-debate-4.pdf` |
+| Tech Debate 4.0 — participation, 15 Oct (no year printed on the document) | `/certificates/tech-debate-4.pdf` |
 
 The untouched four-page scan set is preserved at `/certificates/certificate-set-original.pdf` and is
 downloadable from the Credentials section. In-app previews open the individual PDFs in a modal
 iframe with open/download/next/previous, keyboard focus trapping, and Escape to close.
 
-The Tech Debate certificate genuinely has no printed date; the UI displays
-`DATE NOT PRINTED` instead of inventing one.
+The Tech Debate certificate does not print a year, so the gallery shows `15 OCT` exactly as supplied
+by the owner and does not guess the year.
 
 ### The CV is private by design
 
@@ -211,8 +214,9 @@ Update `public/robots.txt` with the deployed sitemap URL if you add one.
 Verified against the production build with Lighthouse (desktop) and an automated Puppeteer suite:
 
 - **Accessibility 1.0**, **Best Practices 1.0**, **SEO 1.0**.
-- Contrast-checked palette: small red text on paper uses `red-text` (`#C0272D`), small red on ink
-  uses `red-bright` (`#F25C63`); muted ink/paper tokens are tuned to clear WCAG AA.
+- Contrast-checked palette on a warm off-white paper (`#F5F3EE`): small red text on paper uses
+  `red-text` (`#C0272D`), small red on ink uses `red-bright` (`#F25C63`); muted ink/paper tokens are
+  tuned to clear WCAG AA.
 - Full keyboard support: skip link, visible focus rings, focus-trapped certificate modal, Escape to
   close, arrow keys for the games.
 - `prefers-reduced-motion` disables parallax, marquee, float, and entrance animations.
@@ -228,9 +232,11 @@ are not part of the dependency tree, so `npm install` stays lean.
 
 ## Known constraints
 
-- Personal GitHub/LinkedIn URLs were never supplied — these are deliberate placeholders, not bugs.
+- Project repositories and live demos exist only where a URL was actually supplied; the UI hides
+  the rest instead of showing dead buttons.
 - The Games and Graphics coursework covers are generated artwork, labelled as such; no screenshots
   of those projects were provided.
+- The Tech Debate date is shown without a year because the document does not print one.
 - Certificates are scans of paper documents; the modal shows the original PDFs rather than
   retyped text.
 - Snake stores its best score in `localStorage`; nothing else is persisted and there are no cookies,

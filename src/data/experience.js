@@ -23,7 +23,7 @@ export const timeline = [
   {
     id: 'debate',
     period: '2026',
-    date: 'DATE NOT PRINTED',
+    date: '15 OCT',
     title: 'Tech Debate 4.0',
     org: 'Department of CSE, Varendra University',
     type: 'Competition',

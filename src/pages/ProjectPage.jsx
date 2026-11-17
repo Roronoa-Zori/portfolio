@@ -4,7 +4,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   ExternalLink,
-  Lock,
   Play,
 } from 'lucide-react'
 import { getProject, projects } from '../data/projects'
@@ -33,7 +32,7 @@ function DetailBlock({ number, title, children, note }) {
 function LinksPanel({ project }) {
   return (
     <div className="space-y-2">
-      {project.links.github ? (
+      {project.links.github && (
         <a
           href={project.links.github}
           target="_blank"
@@ -43,14 +42,9 @@ function LinksPanel({ project }) {
           Repository
           <ExternalLink size={12} strokeWidth={1.8} />
         </a>
-      ) : (
-        <span className="flex w-full items-center justify-between border border-dashed border-ink/25 px-4 py-3 font-mono text-[9px] uppercase tracking-[0.12em] text-ink/62">
-          Repository not supplied
-          <Lock size={11} strokeWidth={1.6} />
-        </span>
       )}
 
-      {project.links.live ? (
+      {project.links.live && (
         <Link to={project.links.live} className="btn-red w-full !justify-between">
           {project.links.live.startsWith('/#') ? 'Play in the arcade' : 'Live demo'}
           {project.links.live.startsWith('/#') ? (
@@ -59,15 +53,7 @@ function LinksPanel({ project }) {
             <ExternalLink size={12} strokeWidth={1.8} />
           )}
         </Link>
-      ) : (
-        <span className="flex w-full items-center justify-between border border-dashed border-ink/25 px-4 py-3 font-mono text-[9px] uppercase tracking-[0.12em] text-ink/62">
-          Live demo not supplied
-          <Lock size={11} strokeWidth={1.6} />
-        </span>
       )}
-      <p className="pt-1 font-mono text-[8.5px] uppercase leading-relaxed tracking-[0.1em] text-ink/62">
-        Links are added only when they exist. Ask for a walkthrough any time.
-      </p>
     </div>
   )
 }
@@ -187,10 +173,12 @@ export default function ProjectPage() {
                 </ul>
               </div>
 
-              <div>
-                <p className="label-tight mb-3 text-ink/62">Links</p>
-                <LinksPanel project={project} />
-              </div>
+              {(project.links.github || project.links.live) && (
+                <div>
+                  <p className="label-tight mb-3 text-ink/62">Links</p>
+                  <LinksPanel project={project} />
+                </div>
+              )}
 
               <div className="border-t border-ink/20 pt-4">
                 <p className="label-tight mb-2 text-ink/62">Source note</p>

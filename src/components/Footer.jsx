@@ -41,13 +41,22 @@ export default function Footer() {
           <div className="md:col-span-3">
             <p className="label text-paper/55">Elsewhere</p>
             <ul className="mt-4 space-y-2">
-              <li>
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="link-line font-mono text-[10px] uppercase tracking-[0.12em] text-paper/70 hover:text-paper"
-                >
-                  Email
-                </a>
+              <li className="relative">
+                <span className="group/email relative inline-flex flex-col">
+                  <a
+                    href={`mailto:${profile.email}`}
+                    className="link-line font-mono text-[10px] uppercase tracking-[0.12em] text-paper/70 hover:text-paper"
+                    aria-describedby="footer-email-address"
+                  >
+                    Email
+                  </a>
+                  <span
+                    id="footer-email-address"
+                    className="pointer-events-none absolute bottom-full left-0 mb-2 whitespace-nowrap border border-paper/25 bg-paper px-2.5 py-1.5 font-mono text-[9px] normal-case tracking-[0.04em] text-ink opacity-0 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.7)] transition-all duration-300 group-hover/email:-translate-y-0.5 group-hover/email:opacity-100 group-focus-within/email:-translate-y-0.5 group-focus-within/email:opacity-100"
+                  >
+                    {profile.email}
+                  </span>
+                </span>
               </li>
               <li>
                 {profile.links.github ? (
@@ -61,7 +70,7 @@ export default function Footer() {
                   </a>
                 ) : (
                   <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-paper/55">
-                    GitHub — not supplied
+                    GitHub
                   </span>
                 )}
               </li>
@@ -77,7 +86,7 @@ export default function Footer() {
                   </a>
                 ) : (
                   <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-paper/55">
-                    LinkedIn — not supplied
+                    LinkedIn
                   </span>
                 )}
               </li>

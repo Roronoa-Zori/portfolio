@@ -78,9 +78,9 @@ export const certificates = [
     subtitle: 'Debate & communication',
     issuer: 'Department of CSE, Varendra University',
     programme: 'Tech Debate 4.0',
-    date: null,
-    dateShort: '—',
-    displayDate: 'DATE NOT PRINTED',
+    date: '15 October',
+    dateShort: '15.10',
+    displayDate: '15 OCT',
     category: 'Communication',
     duration: 'Competition',
     reference: '',
@@ -97,4 +97,4 @@ export const certificates = [
 export const certificateCategories = ['All', 'AI & Immersive', 'Hackathon', 'Communication']
 
 export const certificateNote =
-  'Four documents, opened and transcribed. No certificate has been omitted. The Tech Debate certificate does not carry a printed date, so none is shown. Previews open the original PDFs inside the site.'
+  'Four documents, opened and transcribed. No certificate has been omitted. Previews open the original PDFs inside the site.'

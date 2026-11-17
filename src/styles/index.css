@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --paper: #eaeaea;
+    --paper: #f5f3ee;
     --ink: #111111;
     --red: #e5393f;
     --line: rgba(17, 17, 17, 0.16);

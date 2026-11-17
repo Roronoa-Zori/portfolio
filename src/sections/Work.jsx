@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { ArrowUpRight, Lock, Play } from 'lucide-react'
+import { ArrowUpRight, Play } from 'lucide-react'
 import SectionHeader from '../components/SectionHeader'
 import Reveal from '../components/Reveal'
 import { GamePoster, GraphicsPoster } from '../components/ProjectArtwork'
@@ -130,20 +130,16 @@ function ProjectEntry({ project, index }) {
               />
             </Link>
 
-            {project.links.live ? (
+            {project.links.live && (
               <Link
                 to={project.links.live}
                 className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-red-deep hover:underline"
               >
                 <Play size={10} fill="currentColor" /> Play now
               </Link>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62">
-                <Lock size={10} /> Demo not supplied
-              </span>
             )}
 
-            {project.links.github ? (
+            {project.links.github && (
               <a
                 href={project.links.github}
                 target="_blank"
@@ -152,10 +148,6 @@ function ProjectEntry({ project, index }) {
               >
                 GitHub ↗
               </a>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62">
-                <Lock size={10} /> Repo not supplied
-              </span>
             )}
           </div>
         </div>
