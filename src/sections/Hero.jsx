@@ -251,12 +251,11 @@ export default function Hero() {
   study: 'CSE, 4th year',
   stack: ['C', 'C++',
     'Java', 'Python'],
-  thesis: 'ML + surveys',
-  status: 'open to internship'
+  status: 'open'
 }`}
                   </pre>
                   <p className="mt-2 font-mono text-[8.5px] uppercase tracking-[0.16em] text-red-bright">
-                    // open to internship
+                    // open to work
                   </p>
                 </div>
                 </CollageCard>
