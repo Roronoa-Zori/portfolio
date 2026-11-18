@@ -1,5 +1,15 @@
-/** Timeline — sourced strictly from the CV and the supplied certificates. */
+/** Timeline — sourced from the CV, the supplied certificates and the owner's thesis. */
 export const timeline = [
+  {
+    id: 'thesis',
+    period: 'NOW',
+    date: '4TH YEAR',
+    title: 'Undergraduate Thesis — Machine Learning',
+    org: 'Varendra University · Department of CSE',
+    type: 'Research',
+    detail:
+      '“Analyzing Career Decision-Making Difficulty Among University Students in Bangladesh Using Machine Learning” — a study built on primary survey data, applying machine learning to understand why career decisions are difficult for students.',
+  },
   {
     id: 'bdset',
     period: '2026',
@@ -70,4 +80,6 @@ export const timeline = [
   },
 ]
 
-export const journey = timeline.slice(0, 4)
+export const journey = ['thesis', 'bsc', 'bdset', 'hackathon']
+  .map((id) => timeline.find((item) => item.id === id))
+  .filter(Boolean)

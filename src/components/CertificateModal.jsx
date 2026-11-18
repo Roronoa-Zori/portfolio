@@ -113,7 +113,7 @@ export default function CertificateModal({ certificate, onClose, onPrev, onNext,
                   <span className="mt-1 h-2 w-2 shrink-0 bg-red" aria-hidden="true" />
                   <div>
                     <p className="label-tight text-ink/62">{certificate.documentTitle}</p>
-                    <p className="mt-1 font-mono text-[11px] uppercase leading-relaxed tracking-[0.06em]">
+                    <p className="mt-1 font-mono text-[12px] uppercase leading-relaxed tracking-[0.06em]">
                       {certificate.issuer}
                     </p>
                   </div>
@@ -122,33 +122,33 @@ export default function CertificateModal({ certificate, onClose, onPrev, onNext,
                 <dl className="space-y-3 border-t border-ink/15 pt-4">
                   <div className="flex items-baseline justify-between gap-4">
                     <dt className="label-tight text-ink/62">Date</dt>
-                    <dd className="font-mono text-[10px] uppercase tracking-[0.08em]">
+                    <dd className="font-mono text-[11px] uppercase tracking-[0.08em]">
                       {certificate.date || 'Not printed on document'}
                     </dd>
                   </div>
                   <div className="flex items-baseline justify-between gap-4">
                     <dt className="label-tight text-ink/62">Programme</dt>
-                    <dd className="max-w-[20ch] text-right font-mono text-[10px] uppercase leading-relaxed tracking-[0.08em]">
+                    <dd className="max-w-[20ch] text-right font-mono text-[11px] uppercase leading-relaxed tracking-[0.08em]">
                       {certificate.programme}
                     </dd>
                   </div>
                   <div className="flex items-baseline justify-between gap-4">
                     <dt className="label-tight text-ink/62">Scope</dt>
-                    <dd className="font-mono text-[10px] uppercase tracking-[0.08em]">
+                    <dd className="font-mono text-[11px] uppercase tracking-[0.08em]">
                       {certificate.duration}
                     </dd>
                   </div>
                   {certificate.reference && (
                     <div className="flex items-baseline justify-between gap-4">
                       <dt className="label-tight text-ink/62">Reference</dt>
-                      <dd className="font-mono text-[10px] uppercase tracking-[0.08em]">
+                      <dd className="font-mono text-[11px] uppercase tracking-[0.08em]">
                         {certificate.reference}
                       </dd>
                     </div>
                   )}
                 </dl>
 
-                <p className="border-t border-ink/15 pt-4 text-[13px] leading-[1.65] text-ink/70">
+                <p className="border-t border-ink/15 pt-4 text-[14px] leading-[1.65] text-ink/70">
                   {certificate.summary}
                 </p>
 
@@ -175,7 +175,7 @@ export default function CertificateModal({ certificate, onClose, onPrev, onNext,
                       <button
                         type="button"
                         onClick={onPrev}
-                        className="flex-1 px-3 py-2.5 text-left font-mono text-[9px] uppercase tracking-[0.14em] text-ink/60 transition-colors hover:bg-ink hover:text-paper"
+                        className="flex-1 px-3 py-2.5 text-left font-mono text-[10px] uppercase tracking-[0.14em] text-ink/60 transition-colors hover:bg-ink hover:text-paper"
                       >
                         ← Prev
                       </button>
@@ -183,7 +183,7 @@ export default function CertificateModal({ certificate, onClose, onPrev, onNext,
                       <button
                         type="button"
                         onClick={onNext}
-                        className="flex-1 px-3 py-2.5 text-right font-mono text-[9px] uppercase tracking-[0.14em] text-ink/60 transition-colors hover:bg-ink hover:text-paper"
+                        className="flex-1 px-3 py-2.5 text-right font-mono text-[10px] uppercase tracking-[0.14em] text-ink/60 transition-colors hover:bg-ink hover:text-paper"
                       >
                         Next →
                       </button>

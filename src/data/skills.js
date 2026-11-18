@@ -43,17 +43,30 @@ export const skillGroups = [
     id: 'ai',
     index: '04',
     name: 'AI & Immersive',
-    note: 'Training exposure through a 288-hour BDSET programme. Studied, not mastered.',
+    note: 'Training exposure through a 288-hour BDSET programme, plus the machine-learning work in my thesis. Studied, not mastered.',
     items: [
+      { name: 'Machine learning', evidence: 'Thesis — primary survey data' },
       { name: 'Artificial intelligence', evidence: 'BDSET certificate — 288 hours' },
-      { name: 'Machine learning', evidence: 'BDSET certificate — 288 hours' },
       { name: 'Deep learning', evidence: 'BDSET certificate — 288 hours' },
+      { name: 'Primary data analysis', evidence: 'Thesis — student survey' },
       { name: 'VR / AR / MR / XR', evidence: 'BDSET certificate — immersive tech' },
     ],
   },
   {
-    id: 'practice',
+    id: 'hardware',
     index: '05',
+    name: 'Hardware',
+    note: 'Arduino and ESP32 builds, kept deliberately small and physical.',
+    items: [
+      { name: 'Arduino', evidence: 'Personal builds' },
+      { name: 'ESP32', evidence: 'Personal build — OLED clock' },
+      { name: 'Breadboard prototyping', evidence: 'Personal builds' },
+      { name: 'Embedded systems', evidence: 'Personal interest & builds' },
+    ],
+  },
+  {
+    id: 'practice',
+    index: '06',
     name: 'Practice',
     note: 'Working habits and documents tools named in the CV.',
     items: [

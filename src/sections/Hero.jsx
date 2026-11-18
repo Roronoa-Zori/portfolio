@@ -236,7 +236,7 @@ export default function Hero() {
                 <CollageCard rotate={-9} hoverRotate={-3} cursor="code" className="float-slow">
                 <div className="w-[clamp(160px,min(14vw,17vh),210px)] border border-ink bg-ink p-3 text-paper shadow-xl sm:p-3.5">
                   <div className="flex items-center justify-between border-b border-paper/25 pb-2">
-                    <span className="font-mono text-[8px] uppercase tracking-[0.18em] text-paper/58">
+                    <span className="font-mono text-[9.5px] uppercase tracking-[0.18em] text-paper/58">
                       profile.js
                     </span>
                     <span className="flex gap-1">
@@ -245,7 +245,7 @@ export default function Hero() {
                       <span className="h-1 w-1 bg-paper/30" />
                     </span>
                   </div>
-                  <pre className="mt-3 whitespace-pre-wrap font-mono text-[8px] leading-[1.85] text-paper/75 sm:text-[8.5px]">
+                  <pre className="mt-3 whitespace-pre-wrap font-mono text-[9.5px] leading-[1.85] text-paper/75 sm:text-[10px]">
 {`const mominur = {
   base: 'Rajshahi',
   study: 'CSE, 4th year',
@@ -254,7 +254,7 @@ export default function Hero() {
   status: 'learning'
 }`}
                   </pre>
-                  <p className="mt-2 font-mono text-[7px] uppercase tracking-[0.16em] text-red-bright">
+                  <p className="mt-2 font-mono text-[8.5px] uppercase tracking-[0.16em] text-red-bright">
                     // open to work
                   </p>
                 </div>
@@ -278,7 +278,7 @@ export default function Hero() {
                     <span className="h-1 w-1 bg-red" />
                     <span className="h-1 w-1 bg-ink/25" />
                     <span className="h-1 w-1 bg-ink/25" />
-                    <span className="ml-auto font-mono text-[6px] uppercase tracking-[0.14em] text-ink/62">
+                    <span className="ml-auto font-mono text-[8px] uppercase tracking-[0.14em] text-ink/62">
                       frootdash
                     </span>
                   </div>
@@ -292,7 +292,7 @@ export default function Hero() {
                     decoding="async"
                   />
                   <div className="flex items-center justify-between px-1 pb-0.5 pt-1.5">
-                    <span className="font-mono text-[7px] uppercase tracking-[0.14em] text-ink/65">
+                    <span className="font-mono text-[8.5px] uppercase tracking-[0.14em] text-ink/65">
                       Selected work / 01
                     </span>
                     <span className="h-[4px] w-[4px] bg-red" />
@@ -327,12 +327,12 @@ export default function Hero() {
                     <span className="absolute right-0 top-0 h-5 w-5 border-b border-l border-paper/50" />
                   </div>
                   <figcaption className="flex items-start justify-between gap-2 px-0.5 pb-0.5 pt-2 text-paper">
-                    <span className="font-mono text-[6px] uppercase leading-[1.5] tracking-[0.12em] sm:text-[7.5px]">
+                    <span className="font-mono text-[8px] uppercase leading-[1.5] tracking-[0.12em] sm:text-[9px]">
                       Md Mominur Rahman
                       <br />
                       <span className="text-paper/55">Rajshahi · 2026</span>
                     </span>
-                    <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-red-bright sm:text-[7.5px]">
+                    <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-red-bright sm:text-[9px]">
                       Fig. 00
                     </span>
                   </figcaption>
@@ -363,7 +363,7 @@ export default function Hero() {
                     decoding="async"
                   />
                   <div className="flex items-center justify-between px-0.5 pb-0.5 pt-1.5">
-                    <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-ink/65">
+                    <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-ink/65">
                       BDSET · 288h
                     </span>
                     <span className="h-[4px] w-[4px] bg-red" />

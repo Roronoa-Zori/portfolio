@@ -30,7 +30,7 @@ function Tab({
       )}
     >
       <span className="flex items-baseline gap-3">
-        <span className={cn('font-mono text-[9px] tracking-[0.12em]', active ? 'text-red-text' : 'text-ink/62')}>
+        <span className={cn('font-mono text-[10px] tracking-[0.12em]', active ? 'text-red-text' : 'text-ink/62')}>
           {group.index}
         </span>
         <span
@@ -128,9 +128,9 @@ export default function Skills() {
               </p>
               <div className="mt-5 flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center border border-ink/20">
-                  <span className="font-mono text-[9px] text-ink/62">{group.index}</span>
+                  <span className="font-mono text-[10px] text-ink/62">{group.index}</span>
                 </span>
-                <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-ink/62">
+                <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62">
                   {group.items.length} entries · updated 2026
                 </span>
               </div>
@@ -184,7 +184,7 @@ export default function Skills() {
                         <span
                           aria-hidden="true"
                           className={cn(
-                            'absolute -right-3 -top-1.5 font-mono text-[8px] transition-opacity duration-300',
+                            'absolute -right-3 -top-1.5 font-mono text-[9.5px] transition-opacity duration-300',
                             selected ? 'opacity-100 text-red-text' : 'opacity-0',
                           )}
                         >
@@ -209,7 +209,7 @@ export default function Skills() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={reduce ? undefined : { opacity: 0 }}
                       transition={{ duration: 0.25 }}
-                      className="text-[13px] leading-relaxed text-ink/65"
+                      className="text-[14px] leading-relaxed text-ink/65"
                     >
                       <span className="font-medium text-ink">{activeItem.name}</span> — {activeItem.evidence}.
                     </motion.p>

@@ -97,7 +97,7 @@ Everything you would normally want to change lives in `src/data/`. No component 
 | File                     | Contains                                                              |
 | ------------------------ | --------------------------------------------------------------------- |
 | `src/data/site.js`       | Name, role, location, email, nav labels, GitHub/LinkedIn URLs and handles |
-| `src/data/projects.js`   | Three projects: slug, title, summary, problem, stack, links, case-study copy |
+| `src/data/projects.js`   | Four projects: slug, title, summary, problem, stack, links, case-study copy |
 | `src/data/certificates.js` | Certificate metadata, PDF paths, filters, gallery ordering          |
 | `src/data/skills.js`     | Skill groups and the honest proficiency wording                       |
 | `src/data/experience.js` | Education and experience timeline entries                             |

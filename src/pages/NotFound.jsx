@@ -14,7 +14,7 @@ export default function NotFound() {
           <br />
           <span className="text-outline">LOST.</span>
         </h1>
-        <p className="mt-6 max-w-[42ch] text-[15px] leading-[1.7] text-ink/65">
+        <p className="mt-6 max-w-[42ch] text-[16px] leading-[1.7] text-ink/65">
           This page does not exist — or it was never printed. The index is a safer place to start.
         </p>
         <Link to="/" className="btn-editorial group mt-8">

@@ -17,11 +17,11 @@ function NavLink({ item, active, onNavigate, dark = false }) {
       onClick={onNavigate}
       aria-current={active ? 'true' : undefined}
       className={cn(
-        'group relative inline-flex items-baseline gap-1.5 py-1 font-mono text-[10px] uppercase tracking-[0.16em] transition-colors duration-300',
+        'group relative inline-flex items-baseline gap-1.5 py-1 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors duration-300',
         active ? 'text-ink' : dark ? 'text-paper/60 hover:text-paper' : 'text-ink/65 hover:text-ink',
       )}
     >
-      <span className="text-[8px] text-red-text">{item.number}</span>
+      <span className="text-[9.5px] text-red-text">{item.number}</span>
       <span className="relative">
         {item.label}
         <span
@@ -92,19 +92,19 @@ export default function Header() {
             className="group flex items-center gap-2.5"
           >
             <span className="relative flex h-7 w-7 items-center justify-center bg-ink text-paper">
-              <span className="font-mono text-[9px] font-medium tracking-[-0.02em]">
+              <span className="font-mono text-[10px] font-medium tracking-[-0.02em]">
                 {profile.initials}
               </span>
               <span className="absolute -right-[3px] -top-[3px] h-[6px] w-[6px] bg-red" />
             </span>
-            <span className="flex flex-col font-mono text-[9px] uppercase leading-[1.35] tracking-[0.16em]">
+            <span className="flex flex-col font-mono text-[10px] uppercase leading-[1.35] tracking-[0.16em]">
               <span>Mominur</span>
               <span className="text-ink/62">Rahman</span>
             </span>
             <span className="sr-only">— home</span>
           </Link>
 
-          <div className="hidden items-center gap-2.5 lg:flex xl:absolute xl:left-1/2 xl:-translate-x-1/2">
+          <div className="hidden shrink-0 items-center gap-2.5 lg:flex">
             <span className="h-[6px] w-[6px] animate-blink rounded-full bg-red" aria-hidden="true" />
             <span className="label-tight text-ink/65">{profile.status}</span>
           </div>
@@ -134,7 +134,7 @@ export default function Header() {
               onClick={() => setOpen(true)}
               aria-expanded={open}
               aria-controls="site-menu"
-              className="group flex items-center gap-2 border border-ink/30 px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.16em] transition-colors hover:border-ink hover:bg-ink hover:text-paper xl:hidden"
+              className="group flex items-center gap-2 border border-ink/30 px-3 py-2.5 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:border-ink hover:bg-ink hover:text-paper xl:hidden"
             >
               Menu
               <span className="flex w-3.5 flex-col gap-[3px]" aria-hidden="true">
@@ -160,7 +160,7 @@ export default function Header() {
             className="fixed inset-0 z-[85] flex flex-col overflow-y-auto bg-paper"
           >
             <div className="shell flex h-16 shrink-0 items-center justify-between border-b border-ink/15 lg:h-[76px]">
-              <span className="font-mono text-[9px] uppercase leading-[1.35] tracking-[0.16em]">
+              <span className="font-mono text-[10px] uppercase leading-[1.35] tracking-[0.16em]">
                 Index
                 <br />
                 <span className="text-ink/62">{profile.issue}</span>
@@ -169,7 +169,7 @@ export default function Header() {
                 ref={closeRef}
                 type="button"
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-2 border border-ink px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper"
+                className="flex items-center gap-2 border border-ink px-3 py-2.5 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:bg-ink hover:text-paper"
               >
                 Close <X size={12} strokeWidth={2} />
               </button>
@@ -191,7 +191,7 @@ export default function Header() {
                     <span className="display text-[clamp(2.1rem,8.4vw,4.6rem)] transition-colors group-hover:text-red">
                       {item.label}
                     </span>
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-ink/62">
+                    <span className="font-mono text-[11px] tracking-[0.16em] text-ink/62">
                       {item.number}
                     </span>
                   </Link>
@@ -202,7 +202,7 @@ export default function Header() {
             <div className="shell flex shrink-0 flex-col gap-4 border-t border-ink/15 py-5 sm:flex-row sm:items-center sm:justify-between">
               <a
                 href={`mailto:${profile.email}`}
-                className="link-line font-mono text-[11px] uppercase tracking-[0.12em]"
+                className="link-line font-mono text-[12px] uppercase tracking-[0.12em]"
               >
                 {profile.email}
               </a>

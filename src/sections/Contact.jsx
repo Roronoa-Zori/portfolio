@@ -15,7 +15,7 @@ function LinkRow({ icon: Icon, label, value, href, note, disabled }) {
       </span>
       <span className="flex items-center gap-2 text-right">
         <span
-          className={`font-mono text-[10px] uppercase tracking-[0.08em] ${
+          className={`font-mono text-[11px] uppercase tracking-[0.08em] ${
             disabled ? 'text-ink/62' : 'text-ink/80 group-hover:text-red-deep'
           }`}
         >
@@ -139,7 +139,7 @@ export default function Contact() {
               </button>
               <a
                 href={`mailto:${profile.email}?subject=Industrial%20attachment%20/%20Hello`}
-                className="font-mono text-[9px] uppercase tracking-[0.14em] text-ink/62 underline decoration-ink/25 underline-offset-4 transition-colors hover:text-ink"
+                className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62 underline decoration-ink/25 underline-offset-4 transition-colors hover:text-ink"
               >
                 Or use your mail app
               </a>
@@ -188,10 +188,10 @@ export default function Contact() {
                 <RegistrationMarks className="hidden sm:block" />
                 <div className="cert-frame relative aspect-square overflow-hidden bg-red-deep p-5 text-paper sm:p-7" style={{ '--tilt': '-1deg' }}>
                   <div className="flex items-start justify-between gap-3">
-                    <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-paper/70">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-paper/70">
                       Status / 2026
                     </span>
-                    <span className="flex items-center gap-2 font-mono text-[8px] uppercase tracking-[0.14em] text-paper/70">
+                    <span className="flex items-center gap-2 font-mono text-[9.5px] uppercase tracking-[0.14em] text-paper/70">
                       <span className="h-[6px] w-[6px] animate-blink rounded-full bg-paper" />
                       Active
                     </span>
@@ -207,7 +207,7 @@ export default function Contact() {
 
                   <div className="absolute bottom-6 left-5 right-5 sm:left-7 sm:right-7">
                     <div className="flex items-end justify-between gap-4 border-t border-paper/30 pt-3">
-                      <span className="font-mono text-[8px] uppercase leading-relaxed tracking-[0.14em] text-paper/70">
+                      <span className="font-mono text-[9.5px] uppercase leading-relaxed tracking-[0.14em] text-paper/70">
                         Software development
                         <br />
                         Web · fundamentals
@@ -244,7 +244,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
-            className="fixed inset-x-0 bottom-5 z-[110] mx-auto w-fit max-w-[calc(100vw-2rem)] border border-ink bg-ink px-4 py-2.5 font-mono text-[9px] uppercase tracking-[0.14em] text-paper"
+            className="fixed inset-x-0 bottom-5 z-[110] mx-auto w-fit max-w-[calc(100vw-2rem)] border border-ink bg-ink px-4 py-2.5 font-mono text-[10px] uppercase tracking-[0.14em] text-paper"
           >
             Email copied — {profile.email}
           </motion.div>

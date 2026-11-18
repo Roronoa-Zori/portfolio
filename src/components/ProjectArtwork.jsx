@@ -54,12 +54,12 @@ export function GamePoster() {
       </svg>
 
       <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3 border-t border-paper/25 pt-2.5">
-        <span className="font-mono text-[8px] uppercase leading-relaxed tracking-[0.16em] text-paper/60">
+        <span className="font-mono text-[9.5px] uppercase leading-relaxed tracking-[0.16em] text-paper/60">
           Playable studies
           <br />
           <span className="text-paper/55">Tic-tac-toe / Snake</span>
         </span>
-        <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-red-bright">02 games</span>
+        <span className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-red-bright">02 games</span>
       </div>
     </div>
   )
@@ -99,7 +99,7 @@ export function GraphicsPoster() {
       </svg>
       <div className="absolute inset-4 flex flex-col justify-between">
         <div className="flex items-start justify-between">
-          <span className="font-mono text-[8px] uppercase leading-relaxed tracking-[0.16em] text-ink/65">
+          <span className="font-mono text-[9.5px] uppercase leading-relaxed tracking-[0.16em] text-ink/65">
             Drawing algorithms
             <br />
             <span className="text-ink/62">Line study 01</span>
@@ -110,7 +110,7 @@ export function GraphicsPoster() {
           <span className="label-tight max-w-[22ch] leading-relaxed text-ink/62">
             Generative cover — not a project screenshot
           </span>
-          <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-ink/62">CSE / CG</span>
+          <span className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-ink/62">CSE / CG</span>
         </div>
       </div>
     </div>

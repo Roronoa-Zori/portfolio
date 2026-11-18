@@ -45,14 +45,14 @@ function CertificateCard({ certificate, index, onOpen }) {
               className="h-full w-full object-contain object-top transition-transform duration-[900ms] ease-out group-hover:scale-[1.015]"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-ink/0 transition-colors duration-500 group-hover:bg-ink/55">
-              <span className="flex translate-y-2 items-center gap-2 border border-paper/50 bg-ink/90 px-3 py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-paper opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
+              <span className="flex translate-y-2 items-center gap-2 border border-paper/50 bg-ink/90 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-paper opacity-0 transition-all duration-400 group-hover:translate-y-0 group-hover:opacity-100">
                 View PDF <ExternalLink size={11} strokeWidth={1.8} />
               </span>
             </div>
-            <span className="absolute -left-1 -top-1 flex h-8 min-w-8 items-center justify-center bg-red-deep px-1.5 font-mono text-[10px] tracking-[0.06em] text-paper sm:-left-2 sm:-top-2">
+            <span className="absolute -left-1 -top-1 flex h-8 min-w-8 items-center justify-center bg-red-deep px-1.5 font-mono text-[11px] tracking-[0.06em] text-paper sm:-left-2 sm:-top-2">
               {certificate.number}
             </span>
-            <span className="absolute bottom-2 right-2 bg-paper/95 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.12em] text-ink/60">
+            <span className="absolute bottom-2 right-2 bg-paper/95 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.12em] text-ink/60">
               PDF
             </span>
           </div>
@@ -63,15 +63,15 @@ function CertificateCard({ certificate, index, onOpen }) {
             <h3 className="font-display text-[clamp(1rem,1.7vw,1.3rem)] font-bold uppercase leading-tight tracking-[-0.02em] transition-colors group-hover:text-red-deep">
               {certificate.title}
             </h3>
-            <p className="mt-1 max-w-[36ch] font-mono text-[8.5px] uppercase leading-relaxed tracking-[0.08em] text-ink/62">
+            <p className="mt-1 max-w-[36ch] font-mono text-[10px] uppercase leading-relaxed tracking-[0.08em] text-ink/62">
               {certificate.issuer}
             </p>
           </div>
           <div className="shrink-0 text-right">
-            <p className="font-mono text-[9px] uppercase tracking-[0.1em] text-ink/60">
+            <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink/60">
               {certificate.displayDate}
             </p>
-            <p className="mt-1 font-mono text-[8px] uppercase tracking-[0.1em] text-ink/62">
+            <p className="mt-1 font-mono text-[9.5px] uppercase tracking-[0.1em] text-ink/62">
               {certificate.category}
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function Certificates() {
         />
 
         <div className="mt-7 grid gap-6 border-b border-ink/20 pb-6 lg:grid-cols-12 lg:items-end">
-          <p className="max-w-[54ch] text-[14px] leading-[1.75] text-ink/60 lg:col-span-7">
+          <p className="max-w-[54ch] text-[15px] leading-[1.75] text-ink/60 lg:col-span-7">
             {certificateNote}
           </p>
           <div className="flex flex-col items-start gap-4 lg:col-span-5 lg:items-end">
@@ -141,14 +141,14 @@ export default function Certificates() {
                       setActiveId(null)
                     }}
                     className={cn(
-                      'border px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.1em] transition-colors duration-300',
+                      'border px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] transition-colors duration-300',
                       active
                         ? 'border-ink bg-ink text-paper'
                         : 'border-ink/25 text-ink/62 hover:border-ink hover:text-ink',
                     )}
                   >
                     {item}
-                    <span className="ml-1.5 text-[8px] opacity-60">
+                    <span className="ml-1.5 text-[9.5px] opacity-60">
                       {String(
                         item === 'All'
                           ? certificates.length
@@ -162,7 +162,7 @@ export default function Certificates() {
             <a
               href="/certificates/certificate-set-original.pdf"
               download="certificate-set-original.pdf"
-              className="group inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink/65 transition-colors hover:text-ink"
+              className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/65 transition-colors hover:text-ink"
             >
               <FileText size={12} strokeWidth={1.6} />
               Download the original set

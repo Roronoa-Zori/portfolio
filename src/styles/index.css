@@ -71,11 +71,11 @@
   }
 
   .label {
-    @apply font-mono text-[10px] font-normal uppercase leading-none tracking-[0.18em] sm:text-[11px];
+    @apply font-mono text-[11px] font-normal uppercase leading-none tracking-[0.18em] sm:text-[12px];
   }
 
   .label-tight {
-    @apply font-mono text-[9px] uppercase leading-none tracking-[0.16em];
+    @apply font-mono text-[10px] uppercase leading-none tracking-[0.16em];
   }
 
   .display {
@@ -142,7 +142,7 @@
   }
 
   .btn-editorial {
-    @apply inline-flex items-center justify-center gap-2 border border-ink px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] transition-colors duration-300;
+    @apply inline-flex items-center justify-center gap-2 border border-ink px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] transition-colors duration-300;
   }
 
   .btn-editorial:hover {
@@ -150,7 +150,7 @@
   }
 
   .btn-red {
-    @apply inline-flex items-center justify-center gap-2 border border-red bg-red px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-paper transition-colors duration-300;
+    @apply inline-flex items-center justify-center gap-2 border border-red bg-red px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-paper transition-colors duration-300;
   }
 
   .btn-red:hover {
@@ -158,7 +158,7 @@
   }
 
   .field-note {
-    @apply font-mono text-[10px] uppercase leading-relaxed tracking-[0.12em] text-smoke;
+    @apply font-mono text-[11px] uppercase leading-relaxed tracking-[0.12em] text-smoke;
   }
 
   .grain-layer {
@@ -225,7 +225,7 @@
     color: var(--paper);
     padding: 10px 14px;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     transition: transform 0.25s var(--ease);

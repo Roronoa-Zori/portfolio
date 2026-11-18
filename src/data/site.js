@@ -20,6 +20,12 @@ export const profile = {
   department: 'Computer Science & Engineering',
   studyYear: 'Fourth year, ongoing',
   languages: 'English (fluent) · Bangla (fluent)',
+  thesis: {
+    title:
+      'Analyzing Career Decision-Making Difficulty Among University Students in Bangladesh Using Machine Learning',
+    short: 'ML & career decision-making',
+    note: 'Undergraduate thesis · primary survey data',
+  },
   links: {
     github: 'https://github.com/Roronoa-Zori',
     githubHandle: 'Roronoa-Zori',

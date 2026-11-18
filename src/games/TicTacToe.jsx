@@ -189,15 +189,15 @@ export default function TicTacToe() {
     <div className="flex h-full flex-col border border-paper/20 bg-[#161616] text-paper">
       <div className="flex items-center justify-between gap-3 border-b border-paper/20 px-4 py-3">
         <div className="flex items-baseline gap-2.5">
-          <span className="font-mono text-[9px] text-red-bright">01</span>
-          <h3 className="font-display text-[15px] font-bold uppercase tracking-[0.02em]">
+          <span className="font-mono text-[10px] text-red-bright">01</span>
+          <h3 className="font-display text-[16px] font-bold uppercase tracking-[0.02em]">
             Tic-Tac-Toe
           </h3>
         </div>
         <div
           role="group"
           aria-label="Opponent"
-          className="flex border border-paper/25 font-mono text-[8px] uppercase tracking-[0.1em]"
+          className="flex border border-paper/25 font-mono text-[9.5px] uppercase tracking-[0.1em]"
         >
           <button
             type="button"
@@ -239,7 +239,7 @@ export default function TicTacToe() {
               <p className="font-display text-[1.6rem] font-bold leading-none tracking-[-0.03em]">
                 {item.key === 'D' ? scores.D : scores[item.key]}
               </p>
-              <p className="mt-1 font-mono text-[7px] uppercase tracking-[0.14em] text-paper/55">
+              <p className="mt-1 font-mono text-[8.5px] uppercase tracking-[0.14em] text-paper/55">
                 {item.label}
               </p>
             </div>
@@ -281,7 +281,7 @@ export default function TicTacToe() {
                     {mark}
                   </motion.span>
                   {!mark && !finished && !thinking && (
-                    <span className="absolute font-mono text-[8px] text-paper/0 transition-colors group-hover:text-paper/55">
+                    <span className="absolute font-mono text-[9.5px] text-paper/0 transition-colors group-hover:text-paper/55">
                       {turn}
                     </span>
                   )}
@@ -314,11 +314,11 @@ export default function TicTacToe() {
         </div>
 
         <div className="mt-4 flex items-center justify-between gap-3">
-          <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-paper/60" role="status" aria-live="polite">
+          <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-paper/60" role="status" aria-live="polite">
             <span className={cn('mr-1.5 inline-block h-[5px] w-[5px]', finished ? 'bg-paper/30' : 'bg-red')} />
             {statusText}
           </p>
-          <span className="hidden font-mono text-[8px] uppercase tracking-[0.12em] text-paper/55 sm:block">
+          <span className="hidden font-mono text-[9.5px] uppercase tracking-[0.12em] text-paper/55 sm:block">
             Round {String(round).padStart(2, '0')}
           </span>
         </div>
@@ -327,7 +327,7 @@ export default function TicTacToe() {
           <button
             type="button"
             onClick={newRound}
-            className="inline-flex items-center gap-2 border border-paper/30 px-3 py-2 font-mono text-[8px] uppercase tracking-[0.14em] text-paper/75 transition-colors hover:border-paper hover:bg-paper hover:text-ink"
+            className="inline-flex items-center gap-2 border border-paper/30 px-3 py-2 font-mono text-[9.5px] uppercase tracking-[0.14em] text-paper/75 transition-colors hover:border-paper hover:bg-paper hover:text-ink"
           >
             <RotateCcw size={10} strokeWidth={1.8} />
             {finished ? 'New round' : 'Restart'}
@@ -335,12 +335,12 @@ export default function TicTacToe() {
           <button
             type="button"
             onClick={resetScore}
-            className="inline-flex items-center gap-2 px-1 py-2 font-mono text-[8px] uppercase tracking-[0.14em] text-paper/55 transition-colors hover:text-paper/70"
+            className="inline-flex items-center gap-2 px-1 py-2 font-mono text-[9.5px] uppercase tracking-[0.14em] text-paper/55 transition-colors hover:text-paper/70"
           >
             <Trophy size={10} strokeWidth={1.6} />
             Reset score
           </button>
-          <span className="ml-auto font-mono text-[8px] uppercase tracking-[0.12em] text-paper/55">
+          <span className="ml-auto font-mono text-[9.5px] uppercase tracking-[0.12em] text-paper/55">
             {solo ? 'Minimax AI' : 'Pass & play'}
           </span>
         </div>

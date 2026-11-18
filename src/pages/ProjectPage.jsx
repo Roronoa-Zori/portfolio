@@ -77,8 +77,27 @@ function Cover({ project }) {
           className="absolute -bottom-4 right-4 hidden w-[38%] border border-ink/20 bg-paper p-1 shadow-2xl sm:block md:right-10"
         />
         <div className="mt-3 flex items-center justify-between gap-4 sm:mt-4">
-          <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-ink/62">
+          <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-ink/62">
             Fig. 01 / Storefront — captured from the submitted build
+          </span>
+          <span className="h-[5px] w-[5px] shrink-0 bg-red" />
+        </div>
+      </div>
+    )
+  }
+  if (project.slug === 'hardware') {
+    return (
+      <div className="relative overflow-hidden border border-ink/20 bg-ink">
+        <img
+          src={project.cover}
+          alt="An ESP32 on a breadboard wired to a small OLED display showing a clock."
+          width="1280"
+          height="880"
+          className="aspect-[16/10] w-full object-cover"
+        />
+        <div className="flex items-center justify-between gap-4 px-3 py-2.5 sm:px-4">
+          <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-paper/70">
+            Fig. 01 / ESP32 + OLED — photographed build
           </span>
           <span className="h-[5px] w-[5px] shrink-0 bg-red" />
         </div>
@@ -112,7 +131,7 @@ export default function ProjectPage() {
         <div className="flex items-center justify-between gap-4 border-b border-ink/20 pb-3">
           <Link
             to="/#work"
-            className="group inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink/65 transition-colors hover:text-ink"
+            className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/65 transition-colors hover:text-ink"
           >
             <ArrowLeft
               size={12}
@@ -132,20 +151,20 @@ export default function ProjectPage() {
               {project.categories.join(' / ')} — {project.year}
             </p>
             <h1 className="display mt-3 text-[clamp(2.8rem,9vw,7.6rem)]">{project.title}</h1>
-            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62">
+            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink/62">
               {project.subtitle}
             </p>
           </div>
           <dl className="grid gap-2 border-t border-ink/20 pt-4 lg:col-span-3 lg:border-t-0 lg:pt-0">
             <div className="flex items-baseline justify-between gap-4">
               <dt className="label-tight text-ink/62">Role</dt>
-              <dd className="max-w-[22ch] text-right font-mono text-[9px] uppercase leading-relaxed tracking-[0.08em] text-ink/70">
+              <dd className="max-w-[22ch] text-right font-mono text-[10px] uppercase leading-relaxed tracking-[0.08em] text-ink/70">
                 {project.role}
               </dd>
             </div>
             <div className="flex items-baseline justify-between gap-4">
               <dt className="label-tight text-ink/62">Status</dt>
-              <dd className="text-right font-mono text-[9px] uppercase leading-relaxed tracking-[0.08em] text-ink/70">
+              <dd className="text-right font-mono text-[10px] uppercase leading-relaxed tracking-[0.08em] text-ink/70">
                 {project.status}
               </dd>
             </div>
@@ -165,7 +184,7 @@ export default function ProjectPage() {
                   {project.stack.map((tech) => (
                     <li
                       key={tech}
-                      className="border border-ink/20 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.1em] text-ink/60"
+                      className="border border-ink/20 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.1em] text-ink/60"
                     >
                       {tech}
                     </li>
@@ -195,17 +214,17 @@ export default function ProjectPage() {
             </DetailBlock>
 
             <DetailBlock number="02" title="The problem" note="What needed solving">
-              <p className="text-[14.5px] leading-[1.75] text-ink/60">{project.problem}</p>
+              <p className="text-[15.5px] leading-[1.75] text-ink/60">{project.problem}</p>
             </DetailBlock>
 
             <DetailBlock number="03" title="My contribution" note="What I actually did">
               <ol className="space-y-3">
                 {project.contribution.map((item, i) => (
                   <li key={i} className="grid grid-cols-[26px_1fr] gap-2 border-b border-ink/10 pb-3">
-                    <span className="font-mono text-[9px] leading-relaxed text-red-text">
+                    <span className="font-mono text-[10px] leading-relaxed text-red-text">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-[14px] leading-[1.7] text-ink/65">{item}</span>
+                    <span className="text-[15px] leading-[1.7] text-ink/65">{item}</span>
                   </li>
                 ))}
               </ol>
@@ -216,7 +235,7 @@ export default function ProjectPage() {
                 {project.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-center gap-2.5 border-b border-ink/10 py-2.5 text-[13px] text-ink/65"
+                    className="flex items-center gap-2.5 border-b border-ink/10 py-2.5 text-[14px] text-ink/65"
                   >
                     <span className="h-[4px] w-[4px] shrink-0 bg-red" aria-hidden="true" />
                     {feature}
@@ -233,14 +252,14 @@ export default function ProjectPage() {
                         key={table.table}
                         className="grid gap-1 border-b border-ink/15 p-3 last:border-b-0 sm:grid-cols-[90px_1fr] sm:gap-4"
                       >
-                        <p className="font-mono text-[10px] uppercase tracking-[0.08em]">
+                        <p className="font-mono text-[11px] uppercase tracking-[0.08em]">
                           {table.table}
                         </p>
                         <div>
-                          <p className="font-mono text-[9px] leading-relaxed text-ink/62">
+                          <p className="font-mono text-[10px] leading-relaxed text-ink/62">
                             {table.fields}
                           </p>
-                          <p className="mt-1 text-[12px] leading-snug text-ink/65">
+                          <p className="mt-1 text-[13px] leading-snug text-ink/65">
                             {table.purpose}
                           </p>
                         </div>
@@ -280,7 +299,7 @@ export default function ProjectPage() {
                             className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                           />
                         </div>
-                        <figcaption className="mt-2 flex items-center justify-between gap-3 font-mono text-[8px] uppercase tracking-[0.12em] text-ink/62">
+                        <figcaption className="mt-2 flex items-center justify-between gap-3 font-mono text-[9.5px] uppercase tracking-[0.12em] text-ink/62">
                           {shot.caption}
                           <span className="h-[4px] w-[4px] bg-red" />
                         </figcaption>
@@ -315,7 +334,7 @@ export default function ProjectPage() {
               <span className="display text-[clamp(2rem,6vw,4.8rem)] transition-colors duration-300 group-hover:text-red-deep">
                 {next.title}
               </span>
-              <span className="hidden font-mono text-[9px] uppercase tracking-[0.12em] text-ink/62 sm:block">
+              <span className="hidden font-mono text-[10px] uppercase tracking-[0.12em] text-ink/62 sm:block">
                 {next.subtitle}
               </span>
             </div>
@@ -325,13 +344,13 @@ export default function ProjectPage() {
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-ink/20 pt-4">
           <Link
             to="/#work"
-            className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink/62 hover:text-ink"
+            className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62 hover:text-ink"
           >
             <ArrowLeft size={11} /> All work
           </Link>
           <a
             href={`mailto:ratulblaster004@gmail.com?subject=About%20${encodeURIComponent(project.title)}`}
-            className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink/62 hover:text-red-deep"
+            className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62 hover:text-red-deep"
           >
             Ask about this project <ArrowUpRight size={11} />
           </a>

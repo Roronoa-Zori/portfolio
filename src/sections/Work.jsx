@@ -33,8 +33,31 @@ function WebCover({ project }) {
         decoding="async"
         className="absolute -bottom-[2%] right-2 w-[46%] rotate-2 border border-ink/20 bg-paper p-1 shadow-2xl transition-transform duration-700 ease-out group-hover:-translate-y-2 group-hover:rotate-1 sm:right-4"
       />
-      <span className="absolute bottom-3 left-3 bg-paper px-2 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-ink/60 sm:left-5">
+      <span className="absolute bottom-3 left-3 bg-paper px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.14em] text-ink/60 sm:left-5">
         Fig. A — Storefront / admin
+      </span>
+    </div>
+  )
+}
+
+function HardwareCover({ project }) {
+  return (
+    <div className="relative h-full w-full overflow-hidden bg-ink">
+      <img
+        src={project.cover}
+        alt="An ESP32 on a breadboard wired to a small OLED display showing a clock."
+        width="1280"
+        height="880"
+        loading="lazy"
+        decoding="async"
+        className="h-full w-full object-cover opacity-95 transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/0 to-ink/20"
+      />
+      <span className="absolute bottom-3 left-3 bg-paper px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.14em] text-ink/70 sm:left-5">
+        Fig. B — ESP32 / OLED
       </span>
     </div>
   )
@@ -43,6 +66,7 @@ function WebCover({ project }) {
 function Cover({ project }) {
   if (project.slug === 'frootdash') return <WebCover project={project} />
   if (project.slug === 'games') return <GamePoster />
+  if (project.slug === 'hardware') return <HardwareCover project={project} />
   return <GraphicsPoster />
 }
 
@@ -75,7 +99,7 @@ function ProjectEntry({ project, index }) {
             <span className="sr-only">Read the {project.title} case study.</span>
             <span
               aria-hidden="true"
-              className="absolute right-3 top-3 hidden translate-y-1 bg-ink px-2.5 py-1.5 font-mono text-[8px] uppercase tracking-[0.14em] text-paper opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:block"
+              className="absolute right-3 top-3 hidden translate-y-1 bg-ink px-2.5 py-1.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-paper opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 sm:block"
             >
               Open case study ↗
             </span>
@@ -92,16 +116,16 @@ function ProjectEntry({ project, index }) {
                 {project.title}
               </Link>
             </h3>
-            <span className="mt-1 hidden font-mono text-[9px] uppercase tracking-[0.14em] text-ink/62 sm:block">
+            <span className="mt-1 hidden font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62 sm:block">
               {project.status}
             </span>
           </div>
-          <p className="mt-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-ink/62">
+          <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-ink/62">
             {project.subtitle}
           </p>
 
-          <p className="mt-4 text-[14.5px] leading-[1.7] text-ink/70">{project.summary}</p>
-          <p className="mt-3 border-l border-red/70 pl-3 text-[12.5px] leading-[1.65] text-ink/62">
+          <p className="mt-4 text-[15.5px] leading-[1.7] text-ink/70">{project.summary}</p>
+          <p className="mt-3 border-l border-red/70 pl-3 text-[13.5px] leading-[1.65] text-ink/62">
             <span className="font-medium text-ink/70">The problem — </span>
             {project.problem}
           </p>
@@ -110,7 +134,7 @@ function ProjectEntry({ project, index }) {
             {project.stack.slice(0, 6).map((tech) => (
               <li
                 key={tech}
-                className="border border-ink/20 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.1em] text-ink/65"
+                className="border border-ink/20 px-2 py-1 font-mono text-[9.5px] uppercase tracking-[0.1em] text-ink/65"
               >
                 {tech}
               </li>
@@ -120,7 +144,7 @@ function ProjectEntry({ project, index }) {
           <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-6">
             <Link
               to={`/work/${project.slug}`}
-              className="group/cta inline-flex items-center gap-2 border-b border-ink pb-1 font-mono text-[10px] uppercase tracking-[0.14em] transition-colors hover:border-red hover:text-red-deep"
+              className="group/cta inline-flex items-center gap-2 border-b border-ink pb-1 font-mono text-[11px] uppercase tracking-[0.14em] transition-colors hover:border-red hover:text-red-deep"
             >
               Read the case study
               <ArrowUpRight
@@ -133,7 +157,7 @@ function ProjectEntry({ project, index }) {
             {project.links.live && (
               <Link
                 to={project.links.live}
-                className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-red-deep hover:underline"
+                className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-red-deep hover:underline"
               >
                 <Play size={10} fill="currentColor" /> Play now
               </Link>
@@ -144,7 +168,7 @@ function ProjectEntry({ project, index }) {
                 href={project.links.github}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="font-mono text-[10px] uppercase tracking-[0.14em] text-red-deep hover:underline"
+                className="font-mono text-[11px] uppercase tracking-[0.14em] text-red-deep hover:underline"
               >
                 GitHub ↗
               </a>
@@ -167,7 +191,7 @@ export default function Work() {
         <SectionHeader
           number="03"
           eyebrow="Selected work"
-          note="Built work, documented honestly. Repositories and live demos appear only when they exist."
+          note="Built work, documented honestly. Open any entry for the full case study."
           title={
             <>
               SELECTED
@@ -178,8 +202,8 @@ export default function Work() {
         />
 
         <div className="mt-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-          <p className="max-w-[46ch] text-[14px] leading-[1.7] text-ink/65">
-            Three threads, one practice: understand the brief, build the thing, then explain how it
+          <p className="max-w-[46ch] text-[15px] leading-[1.7] text-ink/65">
+            Four threads, one practice: understand the brief, build the thing, then explain how it
             works. Open any entry for the full case study.
           </p>
           <div role="group" aria-label="Filter projects" className="flex flex-wrap gap-1.5">
@@ -192,14 +216,14 @@ export default function Work() {
                   aria-pressed={active}
                   onClick={() => setCategory(item)}
                   className={cn(
-                    'border px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.12em] transition-colors duration-300',
+                    'border px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors duration-300',
                     active
                       ? 'border-ink bg-ink text-paper'
                       : 'border-ink/25 text-ink/62 hover:border-ink hover:text-ink',
                   )}
                 >
                   {item}
-                  <span className="ml-1.5 text-[8px] opacity-60">
+                  <span className="ml-1.5 text-[9.5px] opacity-60">
                     {item === 'All'
                       ? String(projects.length).padStart(2, '0')
                       : String(projects.filter((p) => p.categories.includes(item)).length).padStart(2, '0')}
@@ -228,7 +252,7 @@ export default function Work() {
         </div>
 
         {visible.length === 0 && (
-          <p className="border-t border-ink/20 py-12 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink/62">
+          <p className="border-t border-ink/20 py-12 text-center font-mono text-[12px] uppercase tracking-[0.14em] text-ink/62">
             No projects in this category yet.
           </p>
         )}

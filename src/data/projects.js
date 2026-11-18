@@ -154,9 +154,57 @@ export const projects = [
     cover: null,
     secondary: null,
   },
+  {
+    slug: 'hardware',
+    number: '04',
+    title: 'Hardware Lab',
+    subtitle: 'Arduino & ESP32 experiments',
+    categories: ['Embedded'],
+    year: 'Ongoing',
+    role: 'Personal builds — hardware & embedded systems',
+    status: 'Personal build',
+    summary:
+      'A growing set of Arduino and ESP32 builds — breadboard circuits, displays and small devices — made to learn how code behaves once it leaves the screen.',
+    intro:
+      'These builds are a deliberate change of medium: a microcontroller, a breadboard, a display and a handful of jumper wires, where the failure mode is a loose connection rather than a stack trace. The photograph is one of them — an ESP32 driving a small OLED clock module.',
+    problem:
+      'Get comfortable below the browser: wiring, power and timing, and the patience to trace a fault through a circuit instead of a console.',
+    contribution: [
+      'Built Arduino and ESP32 circuits on a breadboard, wiring the microcontroller, a display and the power rails.',
+      'Programmed an ESP32 to drive a small OLED clock.',
+      'Debugged the physical side — wiring and display behaviour — by testing one connection at a time.',
+    ],
+    stack: ['Arduino', 'ESP32', 'Embedded C/C++', 'I²C OLED', 'Breadboard'],
+    features: [
+      'ESP32 + OLED clock',
+      'Breadboard wiring',
+      'Microcontroller basics',
+      'Hardware debugging',
+      'Arduino experiments',
+    ],
+    screenshots: [
+      {
+        src: '/projects/hardware-clock.webp',
+        alt: 'An ESP32 on a breadboard wired to a small OLED display showing a clock face.',
+        caption: 'Photo 01 — ESP32 clock',
+        width: 1200,
+        height: 1600,
+      },
+    ],
+    sourceNote:
+      'Photograph supplied by the author. This is a personal build, not coursework.',
+    reflection:
+      'Hardware removes the safety net. There is no undo, the feedback is physical, and a five-minute fix can hide behind a wire that looks connected. That is exactly why it is worth doing.',
+    links: {
+      github: '',
+      live: '',
+    },
+    cover: '/projects/hardware-clock-cover.webp',
+    secondary: null,
+  },
 ]
 
-export const projectCategories = ['All', 'Web', 'Games', 'Graphics']
+export const projectCategories = ['All', 'Web', 'Games', 'Graphics', 'Embedded']
 
 export function getProject(slug) {
   return projects.find((project) => project.slug === slug)

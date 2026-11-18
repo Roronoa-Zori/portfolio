@@ -10,6 +10,7 @@ const facts = [
   { label: 'Based in', value: 'Rajshahi, Bangladesh' },
   { label: 'Studying', value: 'B.Sc. CSE · Varendra University' },
   { label: 'Year', value: 'Fourth year, ongoing' },
+  { label: 'Thesis', value: 'ML on primary survey data' },
   { label: 'Languages', value: profile.languages },
   { label: 'Status', value: profile.status },
 ]
@@ -17,9 +18,9 @@ const facts = [
 const interests = [
   'Software development',
   'Web platforms',
-  'Problem solving',
+  'Machine learning',
+  'Embedded systems',
   'Computer graphics',
-  'AI & immersive tech',
 ]
 
 export default function About() {
@@ -62,12 +63,12 @@ export default function About() {
                     />
                   </div>
                   <figcaption className="flex items-end justify-between gap-3 px-1 pb-1 pt-2.5 text-paper">
-                    <span className="font-mono text-[8px] uppercase leading-[1.6] tracking-[0.14em]">
+                    <span className="font-mono text-[9.5px] uppercase leading-[1.6] tracking-[0.14em]">
                       Fig. 01 — Between classes
                       <br />
                       <span className="text-paper/55">Rajshahi, Bangladesh</span>
                     </span>
-                    <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-red-text">
+                    <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-red-text">
                       {profile.initials} / 2026
                     </span>
                   </figcaption>
@@ -87,7 +88,7 @@ export default function About() {
                     className="grid grid-cols-[92px_1fr] items-baseline gap-3 border-b border-ink/15 py-2.5 sm:grid-cols-[110px_1fr]"
                   >
                     <dt className="label-tight text-ink/62">{fact.label}</dt>
-                    <dd className="text-[13px] leading-snug text-ink/80">{fact.value}</dd>
+                    <dd className="text-[14px] leading-snug text-ink/80">{fact.value}</dd>
                   </div>
                 ))}
               </dl>
@@ -108,21 +109,34 @@ export default function About() {
             </Reveal>
 
             <Reveal delay={0.07}>
-              <p className="mt-6 text-[15px] leading-[1.75] text-ink/65">
+              <p className="mt-6 text-[16px] leading-[1.75] text-ink/65">
                 My coursework started with C and C++, then Java and Python. On the web side I have
                 worked with HTML and CSS, and built <strong className="font-semibold text-ink">FrootDash</strong> — a
                 fruit delivery platform with accounts, a cart, checkout and an admin dashboard — using
-                PHP and MySQL. Smaller game and computer-graphics projects have been my testing ground
-                for logic, input and drawing fundamentals.
+                PHP and MySQL. Smaller game, hardware and computer-graphics projects have been my
+                testing ground for logic, input and drawing fundamentals, including Arduino and ESP32
+                builds that put the code on a physical board.
               </p>
             </Reveal>
 
             <Reveal delay={0.13}>
-              <p className="mt-5 text-[15px] leading-[1.75] text-ink/65">
+              <p className="mt-5 text-[16px] leading-[1.75] text-ink/65">
                 Right now I am looking for an industrial attachment where I can contribute to real
                 products and learn from people who care about craft. I am early in my career, and I
                 would rather say that plainly than pretend otherwise.
               </p>
+            </Reveal>
+
+            <Reveal delay={0.16}>
+              <div className="mt-8 border-t border-ink/20 pt-4">
+                <p className="label-tight text-ink/62">Current research</p>
+                <p className="mt-2 font-editorial text-[clamp(1.1rem,1.9vw,1.4rem)] italic leading-[1.35] text-ink/90">
+                  “{profile.thesis.title}”
+                </p>
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/62">
+                  {profile.thesis.note}
+                </p>
+              </div>
             </Reveal>
 
             <Reveal delay={0.18}>
@@ -140,7 +154,7 @@ export default function About() {
                 {interests.map((interest) => (
                   <li
                     key={interest}
-                    className="border border-ink/25 px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-ink/65 transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+                    className="border border-ink/25 px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-ink/65 transition-colors hover:border-ink hover:bg-ink hover:text-paper"
                   >
                     {interest}
                   </li>
@@ -184,7 +198,7 @@ export default function About() {
                   <p className="font-display text-[clamp(1.05rem,2vw,1.45rem)] font-bold uppercase leading-tight tracking-[-0.02em]">
                     {item.title}
                   </p>
-                  <p className="mt-1 text-[13px] leading-snug text-ink/62">{item.org}</p>
+                  <p className="mt-1 text-[14px] leading-snug text-ink/62">{item.org}</p>
                 </div>
                 <span className="label-tight w-fit border border-ink/20 px-2 py-1 text-ink/62">
                   {item.type}

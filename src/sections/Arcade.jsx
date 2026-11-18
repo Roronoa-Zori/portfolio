@@ -27,7 +27,7 @@ export default function Arcade() {
         />
 
         <div className="mt-8 flex flex-col justify-between gap-5 border-b border-paper/20 pb-5 sm:flex-row sm:items-end">
-          <p className="max-w-[44ch] text-[14px] leading-[1.7] text-paper/60">
+          <p className="max-w-[44ch] text-[15px] leading-[1.7] text-paper/60">
             A good game is a small, honest system: rules, state, input and feedback. These two are
             here because they work — not because they fill a grid.
           </p>
@@ -41,7 +41,7 @@ export default function Arcade() {
                 <p className="font-display text-xl font-bold leading-none tracking-[-0.03em]">
                   {stat.value}
                 </p>
-                <p className="mt-1 font-mono text-[7px] uppercase tracking-[0.14em] text-paper/55">
+                <p className="mt-1 font-mono text-[8.5px] uppercase tracking-[0.14em] text-paper/55">
                   {stat.label}
                 </p>
               </div>
@@ -64,7 +64,7 @@ export default function Arcade() {
               <div
                 key={copy}
                 aria-hidden={copy === 1}
-                className="flex shrink-0 items-center gap-6 pr-6 font-mono text-[9px] uppercase tracking-[0.24em] text-paper/55"
+                className="flex shrink-0 items-center gap-6 pr-6 font-mono text-[10px] uppercase tracking-[0.24em] text-paper/55"
               >
                 {ticker.map((item) => (
                   <span key={`${copy}-${item}`} className="flex items-center gap-6">

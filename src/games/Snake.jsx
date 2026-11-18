@@ -275,10 +275,10 @@ export default function Snake() {
     <div className="flex h-full flex-col border border-paper/20 bg-[#161616] text-paper">
       <div className="flex items-center justify-between gap-3 border-b border-paper/20 px-4 py-3">
         <div className="flex items-baseline gap-2.5">
-          <span className="font-mono text-[9px] text-red-bright">02</span>
-          <h3 className="font-display text-[15px] font-bold uppercase tracking-[0.02em]">Snake</h3>
+          <span className="font-mono text-[10px] text-red-bright">02</span>
+          <h3 className="font-display text-[16px] font-bold uppercase tracking-[0.02em]">Snake</h3>
         </div>
-        <span className="flex items-center gap-1.5 font-mono text-[8px] uppercase tracking-[0.14em] text-paper/55">
+        <span className="flex items-center gap-1.5 font-mono text-[9.5px] uppercase tracking-[0.14em] text-paper/55">
           <span className="h-[5px] w-[5px] bg-red" /> 1 player
         </span>
       </div>
@@ -286,16 +286,16 @@ export default function Snake() {
       <div className="flex flex-1 flex-col px-4 pb-4 pt-4 sm:px-5">
         <div className="flex items-center justify-between border border-paper/20 px-3 py-2">
           <div className="flex items-baseline gap-2">
-            <span className="font-mono text-[7px] uppercase tracking-[0.14em] text-paper/55">Score</span>
+            <span className="font-mono text-[8.5px] uppercase tracking-[0.14em] text-paper/55">Score</span>
             <span className="font-display text-xl font-bold leading-none tabular-nums">{score}</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="font-mono text-[7px] uppercase tracking-[0.14em] text-paper/55">Best</span>
+            <span className="font-mono text-[8.5px] uppercase tracking-[0.14em] text-paper/55">Best</span>
             <span className="font-display text-xl font-bold leading-none tabular-nums text-red">{best}</span>
           </div>
           <div className="hidden items-baseline gap-2 xs:flex">
-            <span className="font-mono text-[7px] uppercase tracking-[0.14em] text-paper/55">Grid</span>
-            <span className="font-mono text-[9px] uppercase text-paper/60">20×20</span>
+            <span className="font-mono text-[8.5px] uppercase tracking-[0.14em] text-paper/55">Grid</span>
+            <span className="font-mono text-[10px] uppercase text-paper/60">20×20</span>
           </div>
         </div>
 
@@ -327,26 +327,26 @@ export default function Snake() {
                 transition={{ duration: 0.2 }}
                 className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-ink/85 px-5 text-center backdrop-blur-[2px]"
               >
-                <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-red-bright">
+                <p className="font-mono text-[9.5px] uppercase tracking-[0.2em] text-red-bright">
                   {status === 'idle' ? 'Ready' : status === 'paused' ? 'Paused' : 'Game over'}
                 </p>
                 <p className="display text-[clamp(1.6rem,3.2vw,2.2rem)] text-paper">
                   {status === 'idle' ? 'INSERT COIN' : status === 'paused' ? 'TAKE FIVE' : 'WALL 1 — YOU 0'}
                 </p>
                 {status === 'over' && (
-                  <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-paper/60">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-paper/60">
                     Score {score} {score >= best && score > 0 ? '· new best' : `· best ${best}`}
                   </p>
                 )}
                 {status === 'idle' && (
-                  <p className="max-w-[24ch] text-[11px] leading-relaxed text-paper/55">
+                  <p className="max-w-[24ch] text-[12px] leading-relaxed text-paper/55">
                     Eat the red squares. Avoid the walls and your own tail.
                   </p>
                 )}
                 <button
                   type="button"
                   onClick={status === 'paused' ? togglePause : startGame}
-                  className="mt-1 inline-flex items-center gap-2 border border-paper bg-paper px-4 py-2 font-mono text-[8px] uppercase tracking-[0.16em] text-ink transition-colors hover:bg-red hover:border-red hover:text-paper"
+                  className="mt-1 inline-flex items-center gap-2 border border-paper bg-paper px-4 py-2 font-mono text-[9.5px] uppercase tracking-[0.16em] text-ink transition-colors hover:bg-red hover:border-red hover:text-paper"
                 >
                   {status === 'idle' ? 'Start' : status === 'paused' ? 'Resume' : 'Play again'}
                   {status === 'paused' ? <Play size={10} fill="currentColor" /> : <ArrowRight size={10} />}
@@ -374,7 +374,7 @@ export default function Snake() {
             >
               <RotateCcw size={11} strokeWidth={1.8} />
             </button>
-            <span className="ml-1 font-mono text-[8px] uppercase leading-relaxed tracking-[0.1em] text-paper/55">
+            <span className="ml-1 font-mono text-[9.5px] uppercase leading-relaxed tracking-[0.1em] text-paper/55">
               Arrows / WASD
               <br />
               Space pauses
