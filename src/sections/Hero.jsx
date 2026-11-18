@@ -251,11 +251,12 @@ export default function Hero() {
   study: 'CSE, 4th year',
   stack: ['C', 'C++',
     'Java', 'Python'],
-  status: 'learning'
+  thesis: 'ML + surveys',
+  status: 'open to internship'
 }`}
                   </pre>
                   <p className="mt-2 font-mono text-[8.5px] uppercase tracking-[0.16em] text-red-bright">
-                    // open to work
+                    // open to internship
                   </p>
                 </div>
                 </CollageCard>
@@ -406,7 +407,7 @@ export default function Hero() {
             <Magnetic className="shrink-0">
               <ArcText
                 text="OPEN TO INTERNSHIP · 2026 · "
-                className="h-[64px] w-[64px] sm:h-[80px] sm:w-[80px]"
+                className="h-[96px] w-[96px] sm:h-[128px] sm:w-[128px]"
               />
             </Magnetic>
           </div>
